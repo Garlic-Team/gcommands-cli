@@ -19,7 +19,7 @@ jobs:
         run: npm install ci
 
       - name: build
-        run: npm run build
+        run: npm run build:babel
 
       - name: Get version & asign
         id: get_version

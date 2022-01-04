@@ -9,10 +9,8 @@
     "gc": "./dist/cli.mjs"
   },
   "scripts": {
-    "build": "bash scripts/build.bash",
     "lint": "npx eslint .",
-    "build:babel": "npx babel --extensions .ts ./src -d ./dist --minified --copy-files --out-file-extension .mjs",
-    "build:es": "node scripts/build.mjs"
+    "build:babel": "npx babel --extensions .ts ./src -d ./dist --minified --copy-files --out-file-extension .mjs"
   },
   "author": "Garlic-Team",
   "license": "ISC",
