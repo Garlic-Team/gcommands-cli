@@ -18,7 +18,7 @@ export default async() => {
     const jobs: [() => any, string][] = [
         [() => cloneRepoJob(response), 'Cloning the repository'],
         [() => moveFolderJob(response), 'Moving the folder & Creating config'],
-        [() => installDependenciesJob(path.join(__dirname, '..', '..', response['project-name'])), 'Installing dependencies']
+        [() => installDependenciesJob(`./${response['project-name']}`), 'Installing dependencies']
     ]
 
     for (const [job, message] of jobs) {
@@ -42,8 +42,8 @@ export const cloneRepoJob = (response) => {
 
 export const moveFolderJob = (response) => {
     return new Promise((resolve, reject) => {
-        const rawPath = `${path.join(__dirname, '..', '..', response['project-name'], `gcommands-templates-${response['project-template'].branch}`)}`;
-        const parsedPath = `${path.join(__dirname, '..', '..', response['project-name'])}`
+        const rawPath = `./${response['project-name']}/gcommands-templates-${response['project-template'].branch}`;
+        const parsedPath = `./${response['project-name']}`;
 
         mv(rawPath, parsedPath, { mkdirp: false, clobber: false }, (err) => {
             if (err) reject(err);
