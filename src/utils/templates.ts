@@ -21,3 +21,19 @@ export const TypeScriptTemplates: Choice[] = [
         }
     }
 ]
+
+export const TypeScriptGenerateTemplates: Choice[] = [
+    {
+        title: 'Command template',
+        description: 'GCommands command template in TypeScript',
+        value: 'url'
+    }
+]
+
+export const JavaScriptGenerateTemplates: Choice[] = [
+    {
+        title: 'Command template',
+        description: 'GCommands command template in JavaScript',
+        value: 'url'
+    }
+]

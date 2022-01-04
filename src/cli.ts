@@ -5,6 +5,7 @@ import { Command } from 'commander';
 import { URL } from 'url';
 
 import newCommand from './commands/newCommand';
+import generateCommand from './commands/generateCommand';
 
 const gcommands = new Command('gcommands');
 
@@ -17,5 +18,10 @@ gcommands
     .command('new')
     .description('Create a new GCommands project')
     .action(newCommand);
+
+gcommands
+    .command('generate')
+    .description('Generate a component for your project')
+    .action(generateCommand);
 
 gcommands.parse(process.argv);
