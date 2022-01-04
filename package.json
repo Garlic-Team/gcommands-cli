@@ -11,7 +11,7 @@
   "scripts": {
     "build": "bash scripts/build.bash",
     "lint": "npx eslint .",
-    "build:bash": "npx babel --extensions .ts ./src -d ./dist --minified --copy-files --out-file-extension .mjs",
+    "build:babel": "npx babel --extensions .ts ./src -d ./dist --minified --copy-files --out-file-extension .mjs",
     "build:es": "node scripts/build.mjs"
   },
   "author": "Garlic-Team",
