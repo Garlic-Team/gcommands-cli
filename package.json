@@ -16,11 +16,13 @@
   "author": "Garlic-Team",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^5.0.0",
     "commander": "^8.3.0",
     "github-clone-repo": "^1.0.1",
     "hyttpo": "^0.3.2",
     "mv": "^2.1.1",
-    "ora": "^6.0.1"
+    "ora": "^6.0.1",
+    "prompts": "^2.4.2"
   },
   "devDependencies": {
     "@esbuild-plugins/node-resolve": "^0.1.4",

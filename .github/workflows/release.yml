@@ -24,7 +24,7 @@ jobs:
       - name: Get version & asign
         id: get_version
         run: |
-          variable=$(jq --raw-output '.version' package.json)
+          variable=$(jq --raw-output '.version' package.json).$(date +%s)
           echo ::set-output name=version::$variable
 
       - name: Publish releases
@@ -35,6 +35,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish NPM
-        run: npm publish --access public
+        run: |
+          npm version --git-tag-version=false ${{ steps.get_version.outputs.version }}
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
