@@ -1,1 +1,1 @@
-npm run build:es
+npm run build:bash
