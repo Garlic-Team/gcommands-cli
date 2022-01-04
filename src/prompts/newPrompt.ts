@@ -1,5 +1,5 @@
-import type { PromptObject } from 'prompts';
 import { JavaScriptTemplates, TypeScriptTemplates } from '../utils/templates';
+import type { PromptObject } from 'prompts';
 import fs from 'fs';
 
 export const newPrompt = (): Array<PromptObject> => {
