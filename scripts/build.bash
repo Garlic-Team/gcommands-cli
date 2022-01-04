@@ -1,1 +1,1 @@
-npm run build:bash
+npm run build:babel
