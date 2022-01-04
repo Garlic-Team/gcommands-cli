@@ -26,7 +26,20 @@ export const TypeScriptGenerateTemplates: Choice[] = [
     {
         title: 'Command template',
         description: 'GCommands command template in TypeScript',
-        value: 'url'
+        value: {
+            type: 'command',
+            language: 'typescript',
+            url: 'https://garlic-team.github.io/gcommands-templates/typescript/command.template'
+        }
+    },
+    {
+        title: 'Listener template',
+        description: 'GCommands listener template in TypeScript',
+        value: {
+            type: 'listener',
+            language: 'typescript',
+            url: 'https://garlic-team.github.io/gcommands-templates/typescript/listener.template'
+        }
     }
 ]
 
@@ -34,6 +47,19 @@ export const JavaScriptGenerateTemplates: Choice[] = [
     {
         title: 'Command template',
         description: 'GCommands command template in JavaScript',
-        value: 'url'
+        value: {
+            type: 'command',
+            language: 'javascript',
+            url: 'https://garlic-team.github.io/gcommands-templates/javascript/command.template'
+        }
+    },
+    {
+        title: 'Listener template',
+        description: 'GCommands listener template in JavaScript',
+        value: {
+            type: 'listener',
+            language: 'javascript',
+            url: 'https://garlic-team.github.io/gcommands-templates/javascript/listener.template'
+        }
     }
 ]
