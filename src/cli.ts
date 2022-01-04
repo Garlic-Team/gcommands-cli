@@ -1,19 +1,21 @@
 #!/usr/bin/env node
 
-import { readFileSync } from 'fs';
+import { readFile } from 'fs/promises';
 import { Command } from 'commander';
-import { join } from 'path';
+import { URL } from 'url';
+
+import newCommand from './commands/newCommand';
 
 const gcommands = new Command('gcommands');
 
-const version = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf-8')).version;
+const packajeJson = new URL('../package.json', import.meta.url);
+const version = JSON.parse(await readFile(packajeJson, 'utf-8')).version;
 
 gcommands.version(version);
 
 gcommands
     .command('new')
     .description('Create a new GCommands project')
-    .argument('<type>', 'type', 'base')
-    .argument('[name]', 'project name');
+    .action(newCommand);
 
 gcommands.parse(process.argv);

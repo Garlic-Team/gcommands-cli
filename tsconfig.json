@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "target": "es5",
-    "module": "commonjs",
+		"module": "esnext",
+		"target": "esnext",
     "moduleResolution": "node",
     "declaration": true,
     "sourceMap": true,
