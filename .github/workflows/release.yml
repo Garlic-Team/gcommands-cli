@@ -1,0 +1,40 @@
+name: "Release"
+
+on: [workflow_dispatch]
+
+jobs:
+  release:
+    name: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install
+        run: npm install ci
+
+      - name: build
+        run: npm run build
+
+      - name: Get version & asign
+        id: get_version
+        run: |
+          variable=$(jq --raw-output '.version' package.json)
+          echo ::set-output name=version::$variable
+
+      - name: Publish releases
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.get_version.outputs.version }}
+          name: ${{ steps.get_version.outputs.version }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish NPM
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}

@@ -1,5 +1,5 @@
 {
-  "name": "gcommands-cli",
+  "name": "@gcommands/cli",
   "version": "0.1.0-nextdev",
   "description": "",
   "type": "module",
