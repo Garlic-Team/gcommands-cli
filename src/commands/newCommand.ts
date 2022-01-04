@@ -1,3 +1,4 @@
+import fs from 'fs/promises';
 import mv from 'mv';
 import prompts from 'prompts';
 import { newPrompt } from '../prompts/newPrompt';
@@ -16,7 +17,7 @@ export default async() => {
 
     const jobs: [() => any, string][] = [
         [() => cloneRepoJob(response), 'Cloning the repository'],
-        [() => moveFolderJob(response), 'Moving the folder'],
+        [() => moveFolderJob(response), 'Moving the folder & Creating config'],
         [() => installDependenciesJob(path.join(__dirname, '..', '..', response['project-name'])), 'Installing dependencies']
     ]
 
@@ -43,10 +44,25 @@ export const moveFolderJob = (response) => {
     return new Promise((resolve, reject) => {
         const rawPath = `${path.join(__dirname, '..', '..', response['project-name'], `gcommands-templates-${response['project-template'].branch}`)}`;
         const parsedPath = `${path.join(__dirname, '..', '..', response['project-name'])}`
-    
+
         mv(rawPath, parsedPath, { mkdirp: false, clobber: false }, (err) => {
             if (err) reject(err);
-            else resolve(true);
+            else {
+                const data = {
+                    'project-language': response['project-language'],
+                    dirs: {
+                        base: 'src',
+                        plugins: 'plugins',
+                        commands: 'commands',
+                        listeners: 'listeners',
+                        inhibitors: 'inhibitors'
+                    }
+                }
+                
+                fs.writeFile(`${parsedPath}/.gcommandsrc.json`, JSON.stringify(data, null, 2))
+                    .catch(e => reject(e))
+                    .then(() => resolve(true));
+            }
         });
     });
 }
