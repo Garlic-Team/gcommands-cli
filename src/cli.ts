@@ -10,10 +10,10 @@ import generateCommand from './commands/generateCommand';
 
 const gcommands = new Command('gcommands');
 
-const packajeJson = new URL('../package.json', import.meta.url);
+/*const packajeJson = new URL('../package.json', import.meta.url);
 const version = JSON.parse(await readFile(packajeJson, 'utf-8')).version;
 
-gcommands.version(version);
+gcommands.version(version);*/
 
 gcommands
     .command('new')
