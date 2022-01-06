@@ -8,12 +8,12 @@ interface CloneOptions {
 }
 
 export default async(options: CloneOptions) => {
-    const cloned = await clone({
-        owner: options.owner,
-        repository: options.repository,
-        branch: options.branch,
-        outPath: `./${options['project-name']}`
-    })
+	const cloned = await clone({
+		owner: options.owner,
+		repository: options.repository,
+		branch: options.branch,
+		outPath: `./${options['project-name']}`
+	});
 
-    return cloned;
-}
+	return cloned;
+};
