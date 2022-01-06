@@ -40,6 +40,24 @@ export const TypeScriptGenerateTemplates: Choice[] = [
             language: 'typescript',
             url: 'https://garlic-team.github.io/gcommands-templates/typescript/listener.template'
         }
+    },
+    {
+        title: 'Inhibitor template',
+        description: 'GCommands inhibitor template in TypeScript',
+        value: {
+            type: 'inhibitor',
+            language: 'typescript',
+            url: 'https://garlic-team.github.io/gcommands-templates/typescript/inhibitor.template'
+        }
+    },
+    {
+        title: 'Provider template',
+        description: 'GCommands provider template in TypeScript',
+        value: {
+            type: 'provider',
+            language: 'typescript',
+            url: 'https://garlic-team.github.io/gcommands-templates/typescript/provider.template'
+        }
     }
 ]
 
@@ -60,6 +78,24 @@ export const JavaScriptGenerateTemplates: Choice[] = [
             type: 'listener',
             language: 'javascript',
             url: 'https://garlic-team.github.io/gcommands-templates/javascript/listener.template'
+        }
+    },
+    {
+        title: 'Inhibitor template',
+        description: 'GCommands inhibitor template in JavaScript',
+        value: {
+            type: 'inhibitor',
+            language: 'javascript',
+            url: 'https://garlic-team.github.io/gcommands-templates/javascript/inhibitor.template'
+        }
+    },
+    {
+        title: 'Provider template',
+        description: 'GCommands provider template in JavaScript',
+        value: {
+            type: 'provider',
+            language: 'javascript',
+            url: 'https://garlic-team.github.io/gcommands-templates/javascript/provider.template'
         }
     }
 ]

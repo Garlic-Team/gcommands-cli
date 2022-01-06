@@ -1,4 +1,3 @@
-import { JavaScriptGenerateTemplates, TypeScriptGenerateTemplates } from '../utils/templates';
 import type { PromptObject } from 'prompts';
 
 export const initPrompt = (): Array<PromptObject> => {
