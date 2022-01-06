@@ -29,7 +29,8 @@ export const generateConfig = (response) => {
 				plugins: response.plugins,
 				commands: response.commands,
 				listeners: response.listeners,
-				inhibitors: response.inhibitors
+				inhibitors: response.inhibitors,
+				providers: response.providers
 			}
 		};
         

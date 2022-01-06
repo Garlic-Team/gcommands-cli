@@ -82,5 +82,18 @@ export const initPrompt = (): Array<PromptObject> => {
 				return true;
 			}
 		},
+		{
+			type: 'text',
+			name: 'providers',
+			message: 'What\'s the name of your providers directory? | Leave empty if you don\'t have',
+			validate: (value) => {
+				if (!value || value.length === 0) return true;
+
+				const regexp = /^[a-z0-9]+$/i.test(value);
+				if (!regexp) return 'Only `/^[a-z0-9]+$/i` characters are allowed';
+
+				return true;
+			}
+		},
 	];
 };

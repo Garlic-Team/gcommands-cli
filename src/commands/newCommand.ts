@@ -51,7 +51,8 @@ export const moveFolderJob = (response) => {
 						plugins: 'plugins',
 						commands: 'commands',
 						listeners: 'listeners',
-						inhibitors: 'inhibitors'
+						inhibitors: 'inhibitors',
+						providers: 'providers'
 					}
 				};
                 
