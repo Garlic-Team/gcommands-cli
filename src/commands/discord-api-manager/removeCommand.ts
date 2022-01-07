@@ -32,11 +32,8 @@ export const deleteCommands = (clientId, response, commandsToDelete, allCommands
 		if (response.select === 'global') url = `https://discord.com/api/v9/applications/${clientId}/commands`;
 		else url = `https://discord.com/api/v9/applications/${clientId}/guilds/${response.guildId}/commands`;
 
-		console.log(allCommands.length);
-
 		for await(const command of commandsToDelete) allCommands = allCommands.filter(c => c.id !== command);
-
-		console.log(allCommands.length);
+		
 		const res = await hyttpo.request({
 			url,
 			method: 'PUT',

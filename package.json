@@ -1,6 +1,6 @@
 {
   "name": "@gcommands/cli",
-  "version": "0.1.0-nextdev",
+  "version": "0.1.0",
   "description": "",
   "type": "module",
   "main": "dist/cli.mjs",
