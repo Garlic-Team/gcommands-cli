@@ -7,6 +7,7 @@ import { URL } from 'url';
 import newCommand from './commands/newCommand';
 import initCommand from './commands/initCommand';
 import generateCommand from './commands/generateCommand';
+import removeCommand from './commands/discord-api-manager/removeCommand';
 
 const gcommands = new Command('gcommands');
 
@@ -29,5 +30,12 @@ gcommands
 	.command('init')
 	.description('Init your project as GCommands project')
 	.action(initCommand);
+
+gcommands
+	.command('application')
+	.description('Manage application commands (Discord API)')
+	.command('remove')
+	.description('Remove slash command (Discord API)')
+	.action(removeCommand);
 
 gcommands.parse(process.argv);
