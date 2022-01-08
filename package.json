@@ -1,7 +1,7 @@
 {
   "name": "@gcommands/cli",
   "version": "0.1.0",
-  "description": "",
+  "description": "Generate projects, components, etc",
   "type": "module",
   "main": "dist/cli.mjs",
   "bin": {
@@ -12,6 +12,14 @@
     "lint": "npx eslint .",
     "build:babel": "npx babel --extensions .ts ./src -d ./dist --minified --copy-files --out-file-extension .mjs"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Garlic-Team/gcommands-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Garlic-Team/gcommands-cli/issues"
+  },
+  "homepage": "https://github.com/Garlic-Team/gcommands-cli#readme",
   "author": "Garlic-Team",
   "license": "ISC",
   "dependencies": {
