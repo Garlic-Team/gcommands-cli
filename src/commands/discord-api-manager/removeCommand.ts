@@ -12,12 +12,12 @@ export default async() => {
 
 	const commands = await runJob(() => getCommands(clientId, response), 'Getting commands').catch(() => process.exit(1));
 
-	if (!Array.isArray(commands) || commands.length === 0) return console.log(chalk.red(`There are probably no commands, or you have entered some property wrong.`));
+	if (!Array.isArray(commands) || commands.length === 0) return console.log(chalk.red('There are probably no commands, or you have entered some property wrong.'));
 
 	const commandsToDelete = (await prompts(selectCommand(commands))).commands;
 
 	const jobs: [() => any, string][] = [
-		[() => deleteCommands(clientId, response, commandsToDelete, commands), 'Generating config']
+		[() => deleteCommands(clientId, response, commandsToDelete, commands), 'Removing commands']
 	];
 
 	for (const [job, message] of jobs) {
@@ -45,9 +45,9 @@ export const deleteCommands = (clientId, response, commandsToDelete, allCommands
 		}).catch(e => e);
 
 		if (res.ok) resolve(true);
-		else reject(res.data)
-	})
-}
+		else reject(res.data);
+	});
+};
 
 export const getCommands = (clientId, response) => {
 	return new Promise(async(resolve, reject) => {
@@ -67,4 +67,4 @@ export const getCommands = (clientId, response) => {
 		if (res.ok) resolve(res.data);
 		else reject(res.data);
 	});
-}
+};
