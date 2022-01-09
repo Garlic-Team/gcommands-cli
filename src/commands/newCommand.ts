@@ -66,7 +66,7 @@ export const moveFolderJob = (response) => {
 
 export const installDependenciesJob = (location) => {
 	return new Promise((resolve, reject) => {
-		exec('npm i dotenv gcommands@next discord.js@13.5.0', { cwd: location }, (error) => {
+		exec('npm i dotenv gcommands discord.js', { cwd: location }, (error) => {
 			if (error) reject(error);
 			else resolve(error);
 		});
