@@ -42,7 +42,7 @@ export const downloadCommandJob = (config, response) => {
 				.replace('{parameters}', response['listener-event'].parameters.join(', '));
 		}
 
-		fs.writeFileSync(`./${config.dirs.base}/${config.dirs[folder]}/${response['component-name']}.${config['project-language']}`, content);
+		fs.writeFileSync(`./${config.dirs.base}/${folder}/${response['component-name']}.${config['project-language']}`, content);
 
 		resolve(true);
 	});

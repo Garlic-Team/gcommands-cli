@@ -1,6 +1,6 @@
 {
   "name": "@gcommands/cli",
-  "version": "0.1.0-cli",
+  "version": "0.1.1-cli",
   "description": "Generate projects, components, etc",
   "type": "module",
   "main": "dist/cli.mjs",
