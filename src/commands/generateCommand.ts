@@ -34,7 +34,7 @@ export const downloadCommandJob = (config, response) => {
 			content = content
 				.replace('{name}', response['component-name'])
 				.replace('{description}', response['command-description'])
-				.replace('{type}', JSON.stringify(response['command-types'], null, 2).replace(/"/g, ''));
+				.replace('{type}', `[ ${response['command-types']} ]`);
 		} else if (type === 'listener') {
 			content = content
 				.replace('{name}', response['component-name'])
