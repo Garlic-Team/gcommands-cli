@@ -25,7 +25,7 @@ jobs:
       - name: Get version & asign
         id: get_version
         run: |
-          variable=$(jq --raw-output '.version' package.json).$(date +%s)
+          variable=$(jq --raw-output '.version' package.json)
           echo ::set-output name=version::$variable
 
       - name: Publish releases
